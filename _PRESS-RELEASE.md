@@ -16,29 +16,29 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
  
-## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+## PatternMatch ##
 
-## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+## Human-Readable Pattern Matching ##
+  > PatternMatch is an library that allows the programmer to do human-readable pattern matching.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > PatternMatch is a library of functions that can be used in place of regular expressions to do pattern matching. 
+  > It does away with metacharacters, making code human-readable and easier to maintain.
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > Regular expressions can be hard to decipher. PatternMatch makes it easy to write and read a search pattern.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > PatternMatch implements a human-readable API that requires no knowledge of regular expressions.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > "PatternMatch replaces cryptic regular expression code with easy-to-read functions and parameters."
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > To get started, [need to fill in].
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > "Inheriting code that includes lengthy, uncommented regular expressions can really be a headache. With PatternMatch, the code is both easy to read and write."
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > PatternMatch can be from Github.
