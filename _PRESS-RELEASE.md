@@ -19,10 +19,10 @@ Once the project moves into development, the press release can be used as a touc
 ## PatternMatch ##
 
 ## Human-Readable Pattern Matching ##
-  > PatternMatch is an library that allows the programmer to do human-readable pattern matching.
+  > PatternMatch is a Javscript library that allows programmers to do human-readable pattern matching.
 
 ## Summary ##
-  > PatternMatch is a library of functions that can be used in place of regular expressions to do pattern matching. 
+  > In place of regular expressions, it uses a set of functions to do pattern matching. 
   > It does away with metacharacters, making code human-readable and easier to maintain.
 
 ## Problem ##
@@ -32,7 +32,7 @@ Once the project moves into development, the press release can be used as a touc
   > PatternMatch implements a human-readable API that requires no knowledge of regular expressions.
 
 ## Quote from You ##
-  > "PatternMatch replaces cryptic regular expression code with easy-to-read functions and parameters."
+  > "PatternMatch replaces cryptic regular expression code with easy-to-read functions and parameters." — Melinda Budde
 
 ## How to Get Started ##
   > To get started, [need to fill in].
@@ -41,4 +41,4 @@ Once the project moves into development, the press release can be used as a touc
   > "Inheriting code that includes lengthy, uncommented regular expressions can really be a headache. With PatternMatch, the code is both easy to read and write."
 
 ## Closing and Call to Action ##
-  > PatternMatch can be from Github.
+  > PatternMatch can be forked from Github.
