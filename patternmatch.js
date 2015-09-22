@@ -50,20 +50,23 @@ PatternMatch JavaScript Library v1.0
     // should work if multiple words are passed as args
     // or if a sentence is passed
     // ignores words it does not recognize
-    var params = description.split(/\s+/);
+    var params = description.replace(/atleast one/gi, 'atleastOne');
+    params = params.replace(/'|"/g, '');
+    params = params.replace(/letters/g, 'letter');
+    params = params.split(/\s+/);
+
     var newPattern = '';
 
     for (var i = 0; i < params.length; i++) {
       if (this[params[i]]) {
         if (params[i] === 'atleastOne') {
-          newPattern += params[i + 1] + this[params[i]];
+          newPattern += params[i + 1] + '+';
           i = i + 1;
         } else {
           newPattern += this[params[i]];
         }
       } else if (/\d+/.test(params[i])) {
-          newPattern += this[params[i + 1]] + "{" + params[i] + "}";
-          console.log(newPattern);
+          newPattern += this[params[i + 1]] + '{' + params[i] + '}';
           i = i + 1;
       } else {
         newPattern += params[i];
@@ -71,11 +74,11 @@ PatternMatch JavaScript Library v1.0
     }
 
     if (global && !caseSensitive) {
-      var regex = new RegExp(newPattern, "gi");
+      var regex = new RegExp(newPattern, 'gi');
     } else if (global) {
-      var regex = new RegExp(newPattern, "g");
+      var regex = new RegExp(newPattern, 'g');
     } else if (!caseSensitive) {
-      var regex = new RegExp(newPattern, "i");
+      var regex = new RegExp(newPattern, 'i');
     } else {
       var regex = new RegExp(newPattern);
     }
@@ -94,12 +97,28 @@ PatternMatch JavaScript Library v1.0
     return string.search(regex);
   };
 
+  pattern.replace = function(string, description, replacement, caseSensitive) {
+    if (!caseSensitive) {
+      caseSensitive = true; // defaults to case-sensitive
+    }
+    var regex = this.make(description, false, caseSensitive);    
+    return string.replace(regex, replacement);
+  };
+
   pattern.replaceAll = function(string, description, replacement, caseSensitive) {
     if (!caseSensitive) {
       caseSensitive = true; // defaults to case-sensitive
     }
     var regex = this.make(description, true, caseSensitive);    
     return string.replace(regex, replacement);
+  };
+
+  pattern.match = function(string, description, caseSensitive) {
+    if (!caseSensitive) {
+      caseSensitive = true; // defaults to case-sensitive
+    }
+    var regex = this.make(description, false, caseSensitive);    
+    return string.match(regex);
   };
 
 

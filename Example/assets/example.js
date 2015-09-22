@@ -5,14 +5,19 @@ $(document).ready(function() {
   //var replaceIt = pattern.replaceAll('01abcf2l34Ap5', 'letter', '');
     
   $('.ones').click(function() {
-    var replaceIt2 = pattern.replaceAll($('p').text(), 'letter', '1');
-    $('p').text(replaceIt2);
+    var findIt = pattern.indexOf($('p').text(), '"thing"');
+    console.log($('p').text().search(/thing/));
+    //$('p').text(findIt);
   });
 
   $('.wallet').click(function() {
-    var replaceIt2 = pattern.replaceAll($('p').text(), 'Ra atleastOne b 1 letter', 'Walle');
-    $('p').text(replaceIt2);
+    var replaceIt = pattern.replaceAll($('p').text(), '"Ra" atleast one "b" 1 letter', 'Walle');
+    $('p').text(replaceIt);
   });
   
+  $('.match').click(function() {
+    var matchIt = pattern.match($('p').text(), 'space 4 letters space');
+    console.log(matchIt);
+  });
 });
 
