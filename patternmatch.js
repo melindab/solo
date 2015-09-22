@@ -7,7 +7,7 @@ PatternMatch JavaScript Library v1.0
 
   window.pattern = {};
 
-  // PATTERN KEYWORDS
+  // PATTERN KEYWORDS ////////////////////////////////////////////////////////////
 
   // character classes
 
@@ -43,6 +43,8 @@ PatternMatch JavaScript Library v1.0
   // i  ignore case/case-insensitive
   // g  global/find all matches
   // m  multiline mode
+
+  // REGEX CREATOR /////////////////////////////////////////////////////////////
 
   pattern.make = function(description, global, caseSensitive) { 
     // should work if multiple words are passed as args
@@ -80,6 +82,8 @@ PatternMatch JavaScript Library v1.0
     console.log(regex);
     return regex;
   };
+
+  // UTILITY FUNCTIONS //////////////////////////////////////////////////////////
 
   // case takes true if case matters, false if it does not
   pattern.indexOf = function(string, description, caseSensitive) { 
