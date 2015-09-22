@@ -45,7 +45,7 @@ PatternMatch JavaScript Library v1.0
   // m  multiline mode
 
   // make a version for global and ignore case
-  pattern.make = function(description, g, i) { 
+  pattern.make = function(description, global, caseInsensitive) { 
     // should work if multiple words are passed as args
     // or if a sentence is passed
     // ignores words it does not recognize
@@ -65,11 +65,11 @@ PatternMatch JavaScript Library v1.0
       }
     }
 
-    if (g && i) {
+    if (global && caseInsensitive) {
       var regex = new RegExp(newPattern, "gi");
-    } else if (g) {
+    } else if (global) {
       var regex = new RegExp(newPattern, "g");
-    } else if (i) {
+    } else if (caseInsensitive) {
       var regex = new RegExp(newPattern, "i");
     } else {
       var regex = new RegExp(newPattern);
@@ -78,7 +78,7 @@ PatternMatch JavaScript Library v1.0
     return regex;
   };
 
-  pattern.search = function(string, description) {
+  pattern.search = function(string, description) { //findIndex
     var regex = this.make(description);
     console.log(regex);
     return string.search(regex);

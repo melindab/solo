@@ -6,15 +6,15 @@ $(document).ready(function() {
   var replaceIt = pattern.replaceAll("01abcf2l34Ap5", "letter", "");
   console.log(replaceIt); // "12345"
   
-  $('code').click(function() {
+  $('.ones').click(function() {
     var replaceIt2 = pattern.replaceAll($('p').text(), "letter", "1");
     $('p').text(replaceIt2);
   });
 
-  $('ex').click(function() {
-    var replaceIt2 = pattern.replaceAll($('p').text(), "letter", "1");
+  $('.wallet').click(function() {
+    var replaceIt2 = pattern.replaceAll($('p').text(), "Ra atleastOne b letter letter", "Walle");
     $('p').text(replaceIt2);
   });
-  // Ra atleastOne b
+  
 });
 
