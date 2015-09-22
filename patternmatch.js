@@ -44,8 +44,7 @@ PatternMatch JavaScript Library v1.0
   // g  global/find all matches
   // m  multiline mode
 
-  // make a version for global and ignore case
-  pattern.make = function(description, global, caseInsensitive) { 
+  pattern.make = function(description, global, caseSensitive) { 
     // should work if multiple words are passed as args
     // or if a sentence is passed
     // ignores words it does not recognize
@@ -54,39 +53,48 @@ PatternMatch JavaScript Library v1.0
 
     for (var i = 0; i < params.length; i++) {
       if (this[params[i]]) {
-        if (this[params[i]] === 'startsWith') {
-          newPattern += this[params[i + 1]] + this[params[i]];
+        if (params[i] === 'atleastOne') {
+          newPattern += params[i + 1] + this[params[i]];
           i = i + 1;
         } else {
           newPattern += this[params[i]];
         }
+      } else if (/\d+/.test(params[i])) {
+          newPattern += this[params[i + 1]] + "{" + params[i] + "}";
+          console.log(newPattern);
+          i = i + 1;
       } else {
         newPattern += params[i];
       }
     }
 
-    if (global && caseInsensitive) {
+    if (global && !caseSensitive) {
       var regex = new RegExp(newPattern, "gi");
     } else if (global) {
       var regex = new RegExp(newPattern, "g");
-    } else if (caseInsensitive) {
+    } else if (!caseSensitive) {
       var regex = new RegExp(newPattern, "i");
     } else {
       var regex = new RegExp(newPattern);
     }
-
+    console.log(regex);
     return regex;
   };
 
-  pattern.search = function(string, description) { //findIndex
-    var regex = this.make(description);
-    console.log(regex);
+  // case takes true if case matters, false if it does not
+  pattern.indexOf = function(string, description, caseSensitive) { 
+    if (!caseSensitive) {
+      caseSensitive = true; // defaults to case-sensitive
+    }
+    var regex = this.make(description, false, caseSensitive);
     return string.search(regex);
   };
 
-  pattern.replaceAll = function(string, description, replacement) {
-    var regex = this.make(description, "g");    
-    console.log(regex);
+  pattern.replaceAll = function(string, description, replacement, caseSensitive) {
+    if (!caseSensitive) {
+      caseSensitive = true; // defaults to case-sensitive
+    }
+    var regex = this.make(description, true, caseSensitive);    
     return string.replace(regex, replacement);
   };
 
