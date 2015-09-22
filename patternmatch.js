@@ -8,8 +8,10 @@ PatternMatch JavaScript Library v1.0
   window.pattern = {};
 
   // PATTERN KEYWORDS
-  
+
   // character classes
+
+  // add 'all' keyword?
   pattern.any = '.'; // any character except newline
   pattern.word = '\\w'; // [a-zA-Z0-9]
   pattern.nonWord = '\\W';
@@ -52,7 +54,12 @@ PatternMatch JavaScript Library v1.0
 
     for (var i = 0; i < params.length; i++) {
       if (this[params[i]]) {
-        newPattern += this[params[i]];
+        if (this[params[i]] === 'startsWith') {
+          newPattern += this[params[i + 1]] + this[params[i]];
+          i = i + 1;
+        } else {
+          newPattern += this[params[i]];
+        }
       } else {
         newPattern += params[i];
       }
@@ -87,12 +94,9 @@ PatternMatch JavaScript Library v1.0
 }());
 
 
-// test
-var test = pattern.search("what are you doing", "y");
-console.log(test); // 9
 
-var replaceIt = pattern.replaceAll("01abcf2l34Ap5", "letter", "");
-console.log(replaceIt); // "12345"
+
+
 
 
 
