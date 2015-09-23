@@ -1,23 +1,24 @@
 $(document).ready(function() {
-  
-  //var test = pattern.indexOf('what are you doing', 'y');
-  
-  //var replaceIt = pattern.replaceAll('01abcf2l34Ap5', 'letter', '');
     
   $('.ones').click(function() {
-    var findIt = pattern.indexOf($('p').text(), '"thing"');
-    console.log($('p').text().search(/thing/));
-    //$('p').text(findIt);
+    var findIt = pattern.indexOf($('.example').text(), '"A" 4 letters space');
+    $('.returns').html('<strong>Returns: </strong>' + findIt);
   });
 
   $('.wallet').click(function() {
-    var replaceIt = pattern.replaceAll($('p').text(), '"Ra" atleast one "b" 1 letter', 'Walle');
-    $('p').text(replaceIt);
+    var replaceIt = pattern.replaceAll($('.example').text(), '"Ra" at least one "b" 1 letter', 'Walle');
+    $('.example').text(replaceIt);
+    $('.returns').html('<strong>Returns: </strong>A new string with all matches replaced.');
   });
   
   $('.match').click(function() {
-    var matchIt = pattern.match($('p').text(), 'space 4 letters space');
-    console.log(matchIt);
+    var matchIt = pattern.match($('.example').text(), 'space 4 letters space');
+    $('.returns').html('<strong>Returns: </strong>' + matchIt);
+  });
+
+  $('.makeExample').click(function() {
+    $('.returns').html('<strong>Returns: </strong>' + pattern.make('"A" 5 letters at least one digit', true, false));
   });
 });
+
 

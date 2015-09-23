@@ -52,7 +52,7 @@ table {
 /* ======================== CUSTOM ======================== */
 
 body {
-  background-color: #eee;
+  background-color: #a4c0d6;
   font: 300 18px/30px "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: black;
 }
@@ -62,6 +62,10 @@ h1 {
   color: white;
   text-align: center;
   letter-spacing: 0.1em;
+}
+
+strong {
+  font: 400 18px/30px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 em {
@@ -80,30 +84,36 @@ em {
 
 div {
   background-color: #fff;
-  border: 2px solid #1e2e4d;
-  box-shadow: 10px 10px 10px #ccc;
+  border: 2px solid #042c62;
   width: 80%;
   max-width: 700px;
   margin: 30px auto;
 }
 
 header {
-  background-color: #1e2e4d;
+  background-color: #042c62;
   width: 100%;
   padding: 30px;
 }
 
-p {
-  padding: 40px 40px;
+.example {
+  padding: 30px 40px 10px 40px;
 }
 
-code {
-  padding: 40px 40px;
+.codes {
+  background-color: #ffff99;
+  width: 88%;
+  height: 50px;
+  padding: 10px;
+  margin: 20px auto;
 }
 
 .changed {
   font-style: bold;
 }
 
+.returns {  
+  padding: 20px 40px 20px 40px;
+}
 
 

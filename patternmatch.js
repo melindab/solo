@@ -50,12 +50,14 @@ PatternMatch JavaScript Library v1.0
     // should work if multiple words are passed as args
     // or if a sentence is passed
     // ignores words it does not recognize
-    var params = description.replace(/atleast one/gi, 'atleastOne');
+    var params = description.replace(/at least one/gi, 'atleastOne');
     params = params.replace(/'|"/g, '');
     params = params.replace(/letters/g, 'letter');
+    params = params.replace(/digit/g, '\\d');
     params = params.split(/\s+/);
 
     var newPattern = '';
+
 
     for (var i = 0; i < params.length; i++) {
       if (this[params[i]]) {
@@ -65,6 +67,8 @@ PatternMatch JavaScript Library v1.0
         } else {
           newPattern += this[params[i]];
         }
+      } else if (params[i] === 'digit') {
+          newPattern += '\\d';
       } else if (/\d+/.test(params[i])) {
           newPattern += this[params[i + 1]] + '{' + params[i] + '}';
           i = i + 1;

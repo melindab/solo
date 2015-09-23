@@ -16,18 +16,23 @@
       <header>
       <h1>PatternMatch Example</h1>
       </header>
-      <p>There was nothing so VERY remarkable in that; nor did Alice think it so VERY much out of the way to hear the Rabbit say to itself, 'Oh dear! Oh dear! I shall be late!' (when she thought it over afterwards, it occurred to her that she ought to have wondered at this, but at the time it all seemed quite natural); but when the Rabbit actually TOOK A WATCH OUT OF ITS WAISTCOAT-POCKET, and looked at it, and then hurried on, Alice started to her feet, for it flashed across her mind that she had never before seen a rabbit with either a waistcoat-pocket, or a watch to take out of it, and burning with curiosity, she ran across the field after it, and fortunately was just in time to see it pop down a large rabbit-hole under the hedge.</p>
+      <p class="example">There was nothing so VERY remarkable in that; nor did Alice think it so VERY much out of the way to hear the Rabbit say to itself, 'Oh dear! Oh dear! I shall be late!' (when she thought it over afterwards, it occurred to her that she ought to have wondered at this, but at the time it all seemed quite natural); but when the Rabbit actually TOOK A WATCH OUT OF ITS WAISTCOAT-POCKET, and looked at it, and then hurried on, Alice started to her feet, for it flashed across her mind that she had never before seen a rabbit with either a waistcoat-pocket, or a watch to take out of it, and burning with curiosity, she ran across the field after it, and fortunately was just in time to see it pop down a large rabbit-hole under the hedge.</p>
+      <p class="codes">
+        <code class='ones'>pattern.indexOf($('p').text(), '"A" 4 letters space');</code>
+      </p>
+      <p class="codes">
+        <code class='match'>pattern.match($('p').text(), 'space 4 letters space');</code>
+      </p>
+      <p class="codes">
+        <code class='wallet'>pattern.replaceAll($('p').text(), '"Ra" at least one "b" 1 letter', 'Walle');</code>
+      </p>
+      <p class="codes">
+        <code class='makeExample'>pattern.make('"A" 5 letters at least one digit', true, false);</code>
+      </p>       
     </div>
     <div>
-      <code class='ones'>pattern.indexOf($('p').text(), '"thing"');</code>
-    </div>
-    <div>
-      <code class='wallet'>pattern.replaceAll($('p').text(), '"Ra" atleast one "b" 1 letter', 'Walle');</code>
-    </div>
-    <div>
-      <code class='match'>pattern.match($('p').text(), 'space 4 letters space')</code>
-    </div>
-    
+      <p class="returns"><strong>Returns:</strong></p>
+    </div>    
   </body>
 
 </html>
